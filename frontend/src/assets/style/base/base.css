@@ -1,0 +1,68 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: roboto;
+  color: var(--main-txt-color);
+  background-color: var(--main-bg-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+  font-size: 14px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a.active {
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  text-decoration: underline;
+} 
+
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+
+p {
+  margin: 0 0 1em;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--clr2bg)
+}
+
+
+
+/* Dont stretch my Media */
+img,
+embed,
+video,
+object {
+  max-width: 100%
+}
+
+/* Simple and useful CSS Debugging Technique */
+.debug * {
+  outline: 1px solid gold
+}
+
+

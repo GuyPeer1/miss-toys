@@ -1,0 +1,32 @@
+.toys-container{
+display: grid;
+}
+.toy-preview {
+    max-width: 200px;
+    margin: 0 10px 10px 0;
+    text-align: center;
+}
+
+.toy-preview img {
+    width: 100%;
+    height: auto;
+}
+
+.toy-preview .action-btn button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #333;
+}
+
+.toy-preview .action-btn a {
+    display: inline-block;
+    margin: 0 5px;
+    color: #333;
+    text-decoration: none;
+}
+
+.toy-preview .action-btn a:hover {
+    color: #999;
+}

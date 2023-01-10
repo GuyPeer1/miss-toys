@@ -1,0 +1,82 @@
+button {
+    background-color: #4caf50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+button:hover {
+    background-color: var(--clr2);
+    color: white;
+    transition: .3s;
+}
+
+button[disabled] {
+    background-color: var(--gray1);
+    color: black;
+    cursor: not-allowed;
+}
+input:focus {
+    background-color: var(--clr1bg);
+    transition: background-color 1s;
+}
+
+
+/* MYFORM1 */
+form.myform1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  form.myform1 label {
+    display: block;
+    margin-bottom: 0.625em;
+    font-weight: bold;
+  }
+  
+  form.myform1 input,
+  form.myform1 textarea,
+  form.myform1 select {
+    font-family: roboto;
+    width: 100%;
+    padding: 0.75em;
+    border: 1px solid #ccc;
+    border-radius: 0.25em;
+    box-sizing: border-box;
+    margin-bottom: 1.25em;
+    font-size: 1em;
+  }
+  
+  form.myform1 input[type="color"]{
+    padding: 0;
+  }
+  
+  form.myform1 input[type="text"],
+  form.myform1 textarea {
+    height: auto;
+  }
+  
+  @media (max-width: 720px) {
+  form.myform1 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 1em;
+    }
+  
+  form.myform1 label {
+      margin-bottom: 0.5em;
+    }
+  
+  form.myform1 input,
+  form.myform1 textarea,
+  form.myform1 select {
+      font-size: 0.875em;
+      padding: 0.625em;
+      margin-bottom: 1em;
+    }
+  }
+
