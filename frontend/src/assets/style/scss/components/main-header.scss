@@ -1,0 +1,17 @@
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #333;
+  color: $clr3;
+  padding: 20px;
+
+  nav {
+      display: flex;
+      align-items: center;
+  }
+
+  .logo-img{
+      width: 200px;
+      height: 100px;
+  }
+}

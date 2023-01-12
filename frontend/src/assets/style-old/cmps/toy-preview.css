@@ -1,10 +1,7 @@
-.toys-container{
-display: grid;
-}
-.toy-preview {
-    max-width: 200px;
-    margin: 0 10px 10px 0;
-    text-align: center;
+
+.toy-card {
+    max-width: 20%; 
+    margin: 0 10px 10px 0; 
 }
 
 .toy-preview img {

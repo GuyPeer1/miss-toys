@@ -1,11 +1,12 @@
-import { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { React, useEffect, useState } from 'react'
+import ReactSelect from 'react-select';
 
 import { toyService } from '../services/toy-back.service.js'
 
 export function ToysFilter({ onSetFilter }) {
 
     const [filterByToEdit, setFilterByToEdit] = useState(toyService.getDefaultFilter())
+    const [selectedOptions, setSelectedOptions] = useState()
 
     useEffect(() => {
         onSetFilter(filterByToEdit)
@@ -19,6 +20,12 @@ export function ToysFilter({ onSetFilter }) {
         setFilterByToEdit((prevFilter) => ({ ...prevFilter, [field]: value }))
     }
 
+    function handleSelect(value) {
+        setSelectedOptions(value)
+        const labelsToSet = value.length ? value.map(i => i.value) : []
+        setFilterByToEdit((prevFilter) => ({ ...prevFilter, labels: labelsToSet }))
+    }
+
 
     function onSubmitFilter(ev) {
         // update father cmp that filters change on submit
@@ -26,44 +33,49 @@ export function ToysFilter({ onSetFilter }) {
         onSetFilter(filterByToEdit)
     }
 
+    const options = [
+        { value: 'On wheels', label: 'On wheels' },
+        { value: 'Box game', label: 'Box game' },
+        { value: 'Art', label: 'Art' },
+        { value: 'Baby', label: 'Baby' },
+        { value: 'Doll', label: 'Doll' },
+        { value: 'Puzzle', label: 'Puzzle' },
+        { value: 'Outdoor', label: 'Outdoor' },
+        { value: 'Battery Powered', label: 'Battery Powered' },
+    ]
     return <section className="toys-filter">
-        <h4>Filter our Toys</h4>
+        <span className='filter-head'>Filter & Sort our Toys</span>
         <form className='filter-form' onSubmit={onSubmitFilter}>
-            <select className='stock' id="instock-filter" name="inStock" value={filterByToEdit.inStock} onChange={handleChange}>
-                <option value=''>Availability</option>
-                <option value={'yes'}>In stock</option>
-                <option value={'no'}>Sold out</option>
-            </select>
-            <label htmlFor="name">Title:</label>
+            <div className='form-main-line'>
+                <select className='stock' id="instock-filter" name="inStock" value={filterByToEdit.inStock} onChange={handleChange}>
+                    <option value=''>Availability</option>
+                    <option value={'yes'}>In stock</option>
+                    <option value={'no'}>Sold out</option>
+                </select>
+                <ReactSelect
+                    isMulti={true}
+                    options={options}
+                    value={filterByToEdit.labels}
+                    onChange={handleSelect}
+                /></div>
+           <div className='title'> 
             <input type="text"
                 id="name"
                 name="name"
-                placeholder="By name"
+                placeholder="Search By Name..."
                 value={filterByToEdit.name}
                 onChange={handleChange}
-            />
-            <select multiple={true}
-                id="label-filter" name="labels" value={filterByToEdit.labels} onChange={handleChange}>
-                <option value="On wheels">On wheels</option>
-                <option value={'Box game'}>Box game</option>
-                <option value={'Art'}>Art</option>
-                <option value={"Baby"}>Baby</option>
-                <option value={'Doll'}>Doll</option>
-                <option value={'Puzzle'}>Puzzle</option>
-                <option value={'Outdoor'}>Outdoor</option>
-                <option value={'Battery Powered'}>Battery Powered</option>
-            </select>
-            <h4>Sort our Toys</h4>
-
-            <select name='sortBy' value={filterByToEdit.sortBy} onChange={handleChange}>
-                <option value="">Select Sorting</option>
-                <option value="name">Name</option>
-                <option value="price">Price</option>
-                <option value="createdAt">CreatedAt</option>
-            </select>
-            <label htmlFor="desc">Descending:
-                <input name="desc" id="desc" type="checkbox" value={filterByToEdit.desc} onChange={handleChange} />
-            </label>
+            /></div>
+            <div className='sort'>
+                <select name='sortBy' value={filterByToEdit.sortBy} onChange={handleChange}>
+                    <option value="">Select Sorting</option>
+                    <option value="name">Name</option>
+                    <option value="price">Price</option>
+                    <option value="createdAt">CreatedAt</option>
+                </select>
+                <label htmlFor='desc' className='desc'>Descending:
+                    <input name="desc" id="desc" type="checkbox" value={filterByToEdit.desc} onChange={handleChange} />
+                </label></div>
         </form>
     </section>
 }

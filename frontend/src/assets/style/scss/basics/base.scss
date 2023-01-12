@@ -1,0 +1,72 @@
+
+* {
+    box-sizing: border-box;
+}
+
+html { 
+   font-family: Bahnschrift, sans-serif; 
+   color: $clr1;
+   line-height: 1.8;
+   line-height: lh(26px);
+
+   @media (max-width: 1300px) {
+       font-size: 13px;
+   }
+}
+
+body {
+    margin: 0;
+    background-color: $clr2;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+    margin: 0 0 1rem;
+    line-height: lh(40px, 29px);
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.btn {
+    @include btn;
+    
+    &-dark {
+        @include btn($type: dark);
+    }
+    
+    &-light {
+        @include btn($type: light);
+    }
+}
+
+
+// links
+a {
+    color: $clr3;
+          margin-inline: 20px;
+          font-size: larger;
+          text-decoration: none;
+
+    &.active {
+        background-color: $clr4;
+        color: $clr2;
+        font-weight: bold;
+    }
+}
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  input,select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid $clr6;
+    border-radius: 4px;
+}
+

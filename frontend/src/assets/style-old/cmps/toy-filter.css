@@ -1,0 +1,30 @@
+.toys-filter {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4x 8px 0 rgba(0, 0, 0, 0.2);
+    text-align: center;
+    
+}
+
+.toys-filter .filter-form {
+    width: 75%; 
+    padding: 20px;
+    margin: 0 auto; 
+}
+.filter-form select {
+    width: 100%; 
+    padding: 12px; 
+    margin: 8px 0; 
+    border: 1px solid #ddd; 
+    border-radius: 4px; 
+}
+
+.filter-form input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}

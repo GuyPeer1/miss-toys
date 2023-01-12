@@ -13,7 +13,7 @@ export const toyService = {
     getDefaultFilter
 }
 
-function query(filterBy) {
+function query(filterBy ='') {
     const queryParams = `?name=${filterBy.name}&inStock=${filterBy.inStock}
     &labels=${filterBy.labels}&sortBy=${filterBy.sortBy}&desc=${filterBy.desc}`
     return httpService.get(BASE_URL + queryParams)
@@ -44,7 +44,7 @@ function getEmptyToy() {
     return {
         name: '',
         price: '',
-        labels: '',
+        labels: '[]',
         createdAt: '',
         inStock: ''
     }

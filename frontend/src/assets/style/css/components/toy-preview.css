@@ -1,0 +1,13 @@
+.toy-preview {
+  max-width: 20%;
+  margin: 0 10px 10px 0;
+}
+.toy-preview .txt {
+  text-align: center;
+}
+.toy-preview-preview img {
+  width: 100%;
+  height: auto;
+}
+
+/*# sourceMappingURL=toy-preview.css.map */

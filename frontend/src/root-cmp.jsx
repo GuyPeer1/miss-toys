@@ -3,12 +3,13 @@ import { AboutUs } from './views/about.jsx';
 import { HomePage } from './views/home-page';
 import { ToysIndex } from './views/toys-index.jsx';
 import { ToysEdit } from './views/toy-edit.jsx';
+import { DashBoard } from './views/dash-board.jsx';
 import { ToysDetails } from './views/toy-details.jsx';
 import { AppHeader } from './cmps/app-header.jsx';
 import { Provider } from 'react-redux';
 import { store } from './store/store';
 
-import './assets/style/main.css'
+import './assets/style/scss/main.scss'
 
 export function App() {
   return (
@@ -19,6 +20,7 @@ export function App() {
           <main>
             <Routes>
               <Route element={<HomePage />} path="/" />
+              <Route element={<DashBoard />} path="/dash" />
               <Route element={<AboutUs />} path="/about" />
               <Route element={<ToysIndex />} path="/toys" />
               <Route element={<ToysEdit />} path="/toys/edit" />

@@ -1,0 +1,31 @@
+.toys-filter {
+    background-color: $clr7;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin: auto;
+
+    .filter-head {
+        color: $clr3;
+        font-size: em(40px);
+    }
+
+    .form-main-line{
+        display: flex;
+        align-items: center;
+    }
+
+    .title {
+        display: flex;
+        color: $clr3;
+        align-items: center;
+        font-size: larger;
+    }
+    .sort {
+        display: flex;
+    }
+    .desc {
+        font-size: larger;
+        color: $clr3;
+    }
+}

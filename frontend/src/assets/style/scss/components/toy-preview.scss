@@ -1,0 +1,15 @@
+.toy-preview {
+    max-width: 20%; 
+    margin: 0 10px 10px 0; 
+
+    .txt {
+        text-align: center;
+    }
+    &-preview {
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+    }
+}

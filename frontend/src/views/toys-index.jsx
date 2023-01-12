@@ -1,18 +1,17 @@
-import { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useEffect } from 'react'
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 import { ToysList } from '../cmps/toys-list.jsx'
 import { ToysFilter } from '../cmps/toys-filter.jsx'
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
-import { loadToys, removeToy, saveToy, setFilter } from '../store/toy.action.js'
+import { loadToys, removeToy, setFilter } from '../store/toy.action.js'
 
 export function ToysIndex() {
 
     const toys = useSelector((storeState) => storeState.toyModule.toys)
     const isLoading = useSelector((storeState) => storeState.toyModule.isLoading)
     const filterBy = useSelector((storeState) => storeState.toyModule.filterBy)
-    const [isAddingToy, setIsAddingToy] = useState(false)
 
     useEffect(() => {
         loadToys(filterBy)
