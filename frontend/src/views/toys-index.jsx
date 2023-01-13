@@ -21,16 +21,16 @@ export function ToysIndex() {
         setFilter(filterBy)
     }
 
-    function onRemoveToy(toyId) {
-        removeToy(toyId)
-            .then(() => {
-                showSuccessMsg('Toy removed')
-            })
-            .catch(err => {
-                showErrorMsg('Cannot remove toy')
-            })
+    async function onRemoveToy(toyId) {
+        try {
+            await removeToy(toyId)
+            showSuccessMsg('Toy Removed')
+        }
+        catch {
+            showErrorMsg('cannot remove toy')
+        }
     }
-    
+
     return <section className="toys-index">
         <ToysFilter onSetFilter={onSetFilter} />
         <Link to={`/toys/edit`}>Add Toys</Link>

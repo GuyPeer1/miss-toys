@@ -1,7 +1,6 @@
 
 import { storageService } from './async-storage.service.js'
 import { utilService } from './util.service.js'
-import { httpService } from './http.service.js'
 
 const STORAGE_KEY = 'toyDB'
 const BASE_URL = 'toy/'
